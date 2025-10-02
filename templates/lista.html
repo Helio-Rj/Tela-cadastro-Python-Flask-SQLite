@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados e título da página -->
+    <meta charset="UTF-8">
+    <title>Usuários cadastrados</title>
+</head>
+<body>
+    <!-- Título da página -->
+    <h1>Lista de Usuários</h1>
+    <!-- Tabela para exibir os usuários cadastrados -->
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+        <!-- Loop para exibir cada usuário da lista -->
+        {% for u in usuarios %}
+        <tr>
+            <td>{{ u[0] }}</td>
+            <td>{{ u[1] }}</td>
+            <td>{{ u[2] }}</td>
+            <td>
+                <!-- Links para editar ou excluir o usuário -->
+                <a href="/editar/{{ u[0] }}">Editar</a> | 
+                <a href="/deletar/{{ u[0] }}" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <!-- Link para voltar à página inicial -->
+    <a href="/">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados, título e importação do CSS -->
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Título do formulário -->
+    <h1>Formulário de Cadastro</h1>
+    <!-- Formulário para cadastro de usuário -->
+    <form action="/cadastrar" method="post">
+        <label>Nome:</label><br>
+        <input type="text" name="nome" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+    <br>
+    <!-- Link para visualizar a lista de usuários cadastrados -->
+    <a href="/usuarios">Ver lista de usuários</a>
+</body>
+</html>
